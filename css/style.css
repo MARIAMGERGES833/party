@@ -1,0 +1,319 @@
+/*
+font-family: 'Pacifico', cursive;
+font-family: 'PT Sans Caption', sans-serif;
+*/
+
+body {
+  /* font-family: 'Poppins', sans-serif; */
+  font-family: "PT Sans Caption", sans-serif;
+  overflow-y: hidden;
+}
+:root {
+  --primary-color: #070150;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+ul li {
+  list-style: none;
+  transition: all 0.5s;
+}
+::selection {
+  background-color: var(--primary-color);
+  color: white;
+}
+/*/ ====loading============/*/
+.loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: black;
+  z-index: 9999999;
+}
+.loader {
+  font-size: 60px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  display: inline-block;
+  color: rgb(242, 10, 227);
+  letter-spacing: 2px;
+  position: relative;
+  box-sizing: border-box;
+}
+.loader::after {
+  content: "Loading";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: rgba(242, 10, 227, 0.43);
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  animation: animloader 6s linear infinite;
+}
+
+@keyframes animloader {
+  0% {
+    height: 100%;
+  }
+  100% {
+    height: 0%;
+  }
+}
+/*====end loading=====*/
+
+/*/ ====start header============/*/
+
+.btnUp {
+  background-color: var(--primary-color);
+  box-shadow: 0 0 2px 2px rgb(187, 185, 185);
+  color: white;
+  position: fixed;
+  right: 15px;
+  bottom: 20px;
+  z-index: 999;
+  display: none;
+}
+header {
+  background-image: linear-gradient(
+      rgba(242, 10, 227, 0.298),
+      rgba(241, 220, 60, 0.298)
+    ),
+    url("https://alfaroukroute.github.io/egyptianParty/images/events-heavenly-header.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: white;
+  position: relative;
+}
+header .navSide {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  z-index: 999;
+  display: flex;
+}
+
+header .navInner {
+  background-color: var(--primary-color);
+  padding: 10px;
+}
+
+header .navSide .image {
+  width: 100px;
+  border: 7px solid rgb(241, 220, 60);
+  border-radius: 50%;
+  animation: border 5s infinite;
+}
+@keyframes border {
+  0% {
+    border-color: rgb(242, 10, 227);
+  }
+  30% {
+    border-color: rgb(255, 100, 3);
+  }
+  70% {
+    border-color: rgb(241, 220, 60);
+  }
+  100% {
+    border-color: rgb(93, 253, 0);
+  }
+}
+header .navSide .semiCircle {
+  width: 40px;
+  height: 60px;
+  background-color:var(--primary-color);
+  cursor: pointer;
+}
+header .navSide .fa-chevron-left {
+  display: none;
+}
+header .navSide .fa-chevron-right {
+  display: block;
+}
+header .chooseColor span{
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+background-color: aqua; 
+ border-radius: 10px;
+}
+header .chooseColor span:hover{
+transform: scale(1.1);
+}
+
+header .navSide ul li:hover {
+  padding: 7px 10px;
+  transform: translateX(7px);
+}
+header .navSide ul li a:hover {
+  color: rgb(242, 10, 227);
+}
+
+/*/ ====end header============/*/
+
+
+
+/*/===========start section 2 singers==========/*/
+#duration {
+  transition: background-color 1.5s;
+}
+section h2 {
+  background-color: rgb(242, 10, 227);
+  color: white;
+}
+section p {
+  color: var(--primary-color);
+}
+section .singers {
+  width: 50%;
+}
+section .singer1,
+section .singer2,
+section .singer3,
+section .singer4 {
+  /* border: var(--primary-color) 2px solid; */
+  background-color: #fff;
+}
+section .singer1,
+section .singer2,
+section .singer3,
+section .singer4 {
+  position: relative;
+  left: 0;
+}
+section .singer2 {
+  top: 0px;
+}
+section .singer3 {
+  top: 0px;
+}
+section .singer4 {
+  top: 0px;
+}
+section .singers img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: #fff 7px solid;
+  box-shadow: 0 0 6px 3px rgb(214, 214, 214);
+}
+section h3 {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+
+
+
+
+@media screen and (max-width:992px){
+  section .singers {
+    width: 75%;
+  }
+}
+@media screen and (max-width:768px){
+  section .singers {
+    width: 90%;
+  }
+}
+/*/===========end section 2 singers==========/*/
+
+
+
+/*=========start third section============*/
+
+
+section .joinUs {
+  background-image: linear-gradient(
+      rgba(22, 10, 242, 0.528),
+      rgba(241, 220, 60, 0.591)
+    ),
+    url("https://alfaroukroute.github.io/egyptianParty/images/invitation-2508607__340.jpg");
+  /* background-attachment: fixed; */
+  background-repeat: no-repeat;
+}
+
+section #day,
+section #hour,
+section #min,
+section #sec {
+  padding: 3rem;
+  box-shadow: 0 0 10px 10px rgba(242, 10, 227, 0.329);
+  background-color: #ffffff7c;
+  width: 30%;
+  height: 30%;
+  margin-right: 30px;
+  animation: shadow 2s infinite;
+}
+@keyframes shadow {
+  0% {
+    box-shadow: 0 0 10px 10px rgba(242, 10, 227, 0.329);
+  }
+  50% {
+    box-shadow: 0 0 20px 20px rgba(241, 220, 60, 0.591);
+  }
+  100% {
+    box-shadow: 0 0 15px 15px rgba(241, 60, 60, 0.591);
+  }
+}
+
+
+@media screen and (max-width:992px){
+  section .joinUs .counter #day,
+  section .joinUs .counter #hour,
+  section .joinUs .counter #min,
+  section .joinUs .counter #sec
+   {
+    margin-bottom: 15px;
+    width: 50%;
+    height: 50%;
+ }
+ section .joinUs .counter {
+ flex-wrap: wrap;
+ flex-direction: column;
+ }
+ section .joinUs {
+  background-attachment: fixed;
+  background-size: cover;
+}
+}
+
+/*=========end third section============*/
+
+
+
+
+/*========section details===========*/
+section .data ul a{
+padding: 8px;
+background-color: var(--primary-color);
+border-radius: 10px;
+border: 2px solid var(--primary-color) ;
+transition: all 1s;
+text-decoration: none;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+section .data ul a:hover{
+background-color: #fff;
+
+}
+section .data ul a:hover i{
+  background-color: var(--primary-color);
+
+  
+  }
+section .data ul i{
+  font-size: 20px;
+  color: white;
+}
+section textarea{
+  max-height: 150px;
+}
