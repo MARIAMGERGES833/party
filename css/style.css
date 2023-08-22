@@ -129,6 +129,7 @@ header .navSide .semiCircle {
   height: 60px;
   background-color:var(--primary-color);
   cursor: pointer;
+  align-self: center;
 }
 header .navSide .fa-chevron-left {
   display: none;
@@ -162,6 +163,7 @@ header .navSide ul li a:hover {
 /*/===========start section 2 singers==========/*/
 #duration {
   transition: background-color 1.5s;
+  
 }
 section h2 {
   background-color: rgb(242, 10, 227);

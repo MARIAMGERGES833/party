@@ -8,12 +8,47 @@ $(document).ready(function(){
     $(".loading").slideUp(500 , function(){
       $("body").css("overflow","auto")
       $(".loading").remove();
-   
     })
   })
+  //=========navbar----------------
+// At start
+  let navSideWidth = $(".navInner").innerWidth()
+  $(".navSide").animate ({left : -navSideWidth} , 10)
+
+
+$(".fa-chevron-left").click(function(){
+      $(".fa-chevron-right").css("display","block");
+      $(".fa-chevron-left").css ("display","none");
+      $(".navSide").animate ({left : -navSideWidth} , 1000)
+          
+});
+
+$(".fa-chevron-right").click(function(){
+     $(".fa-chevron-right").css("display","none");
+     $(".fa-chevron-left").css ("display","block");
+     $(".navSide").animate ({left : "0"} , 1000)
+          
+});
+
+
 
 })
 
+//==============color box==================
+$(document).ready(function() {
+  let colorBox = $(".colorBox");
+  colorBox.eq(0).css("backgroundColor", "#f00");
+  colorBox.eq(1).css("backgroundColor", "#a0f");
+  colorBox.eq(2).css("backgroundColor", "#8f0");
+  colorBox.eq(3).css("backgroundColor", "#000");
+
+  colorBox.click(function(e) {
+      let spanColor = $(e.target).css("backgroundColor");
+      $("#innerNav").css("backgroundColor", spanColor);
+      $(".colorText").css("color",spanColor)
+
+  });
+});
 
 
 //===============smooth scroll ----------------
@@ -28,7 +63,7 @@ $("header a").click(function(eventInfo){
 //===================up==========  ????????????
 $(window).scroll(function(){
   let windowTop = $(window).scrollTop();
-  let section2Offset = $("#duration").offset();
+  let section2Offset = $("#duration").offset().top;
   console.log(windowTop,section2Offset);
   if(windowTop > section2Offset-150 ){
     //===================appear btnUp==========
@@ -61,37 +96,9 @@ $(window).scroll(function(){
 
 
 
-//=========navbar----------------
-// At start
-let navSideWidth = $(".navInner").innerWidth()
-$(".navSide").css ("left ", -navSideWidth) ;
 
 
-$(".fa-chevron-left").click(function(){
-      $(".fa-chevron-right").css("display","block");
-      $(".fa-chevron-left").css ("display","none");
-      $(".navSide").animate ({left : -navSideWidth} , 1000)
-          
-});
 
-$(".fa-chevron-right").click(function(){
-     $(".fa-chevron-right").css("display","none");
-     $(".fa-chevron-left").css ("display","block");
-     $(".navSide").animate ({left : "0"} , 1000)
-          
-});
-
-//============choose color in nav bar
-let colorBox = $(".colorBox")
-colorBox.eq(0).css("backgrondColor","#f00")
-colorBox.eq(1).css("backgrondColor","#a0f")
-colorBox.eq(2).css("backgrondColor","#8f0")
-colorBox.eq(3).css("backgrondColor","#000")
-
-colorBox.click(function(e){
-let spanColor = $(e.target).css("backgroundColor")
-console.log(spanColor)
-})
 
 //==============section2===============
 //at start==========
@@ -173,9 +180,7 @@ var x = setInterval(function() {
 
 
 
-$("textarea").keydown(function(){
-  updateCountdown()
-})
+
 //============section details=============
 $(document).ready(function () {
   $('textarea').on("propertychange keyup input paste",
@@ -189,4 +194,3 @@ $(document).ready(function () {
       $(this).next('span').text(remainingChars<=0?0:remainingChars);
   });
 });
-$('.newComment').keyup(updateCountdown);
